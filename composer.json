@@ -1,0 +1,23 @@
+{
+    "name": "afterbug/afterbug-yii",
+    "description": "AfterBug Notifier for Yii 2 Applications.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alfa Adhitya",
+            "email": "alfa@afterbug.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.14",
+        "afterbug/afterbug": "dev-master"
+    },
+    "autoload": {
+        "psr-4" : {
+            "AfterBug\\AfterBugYii\\" : "src/"
+        }
+    }
+}
