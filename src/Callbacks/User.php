@@ -17,7 +17,10 @@ class User
     {
         if (! Yii::$app->user->isGuest) {
             $user = (array) Yii::$app->user->getIdentity();
-            $config->setUser($user);
+
+            $config->setUser(
+                array_intersect_key($user, array_flip((array) Yii::$app->afterBug->userAttributes))
+            );
         }
     }
 }

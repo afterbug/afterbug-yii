@@ -32,6 +32,11 @@ class AfterBug extends Component
     public $apiKey;
 
     /**
+     * @var array user attributes to send to AfterBug.
+     */
+    public $userAttributes = ['id', 'email', 'username', 'name'];
+
+    /**
      * @var Client
      */
     protected $client;
