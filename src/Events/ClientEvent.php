@@ -2,8 +2,8 @@
 
 namespace AfterBug\AfterBugYii\Events;
 
-use AfterBug\Client;
 use yii\base\Event;
+use AfterBug\Client;
 
 class ClientEvent extends Event
 {
