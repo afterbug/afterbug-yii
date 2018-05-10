@@ -2,8 +2,8 @@
 
 namespace AfterBug\AfterBugYii\Requests;
 
-use AfterBug\Request\Contracts\RequestInterface;
 use Yii;
+use AfterBug\Request\Contracts\RequestInterface;
 
 class YiiRequest implements RequestInterface
 {
@@ -38,7 +38,7 @@ class YiiRequest implements RequestInterface
     }
 
     /**
-     * Get the headers
+     * Get the headers.
      *
      * @return array
      */
@@ -48,7 +48,7 @@ class YiiRequest implements RequestInterface
     }
 
     /**
-     * Get server variable
+     * Get server variable.
      *
      * @return array
      */

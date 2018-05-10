@@ -2,13 +2,13 @@
 
 namespace AfterBug\AfterBugYii;
 
-use AfterBug\AfterBugYii\Callbacks\User;
-use AfterBug\AfterBugYii\Events\ClientEvent;
-use AfterBug\AfterBugYii\Requests\YiiRequest;
+use Yii;
 use AfterBug\Client;
 use AfterBug\Config;
 use yii\base\Component;
-use Yii;
+use AfterBug\AfterBugYii\Callbacks\User;
+use AfterBug\AfterBugYii\Events\ClientEvent;
+use AfterBug\AfterBugYii\Requests\YiiRequest;
 
 class AfterBug extends Component
 {
@@ -20,7 +20,7 @@ class AfterBug extends Component
     const VERSION = '1.0.0';
 
     /**
-     * Set to `false` in development environment to skip collecting errors
+     * Set to `false` in development environment to skip collecting errors.
      *
      * @var bool
      */
@@ -71,7 +71,7 @@ class AfterBug extends Component
         $this->client = (new Client($config, null, new YiiRequest()))
             ->setSdk([
                 'name' => 'afterbug-yii',
-                'version' => static::VERSION
+                'version' => static::VERSION,
             ])
             ->setApplicationPaths($this->applicationPaths())
             ->setEnvironment(YII_ENV)

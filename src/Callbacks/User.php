@@ -2,8 +2,8 @@
 
 namespace AfterBug\AfterBugYii\Callbacks;
 
-use AfterBug\Config;
 use Yii;
+use AfterBug\Config;
 
 class User
 {

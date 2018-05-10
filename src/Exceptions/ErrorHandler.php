@@ -2,10 +2,10 @@
 
 namespace AfterBug\AfterBugYii\Exceptions;
 
-use AfterBug\AfterBugYii\AfterBug;
-use AfterBug\Client;
-use yii\base\InvalidConfigException;
 use Yii;
+use AfterBug\Client;
+use AfterBug\AfterBugYii\AfterBug;
+use yii\base\InvalidConfigException;
 
 class ErrorHandler extends \yii\web\ErrorHandler
 {
@@ -34,7 +34,7 @@ class ErrorHandler extends \yii\web\ErrorHandler
      */
     protected function getAfterBugClient()
     {
-        if (!Yii::$app->has($this->clientId)) {
+        if (! Yii::$app->has($this->clientId)) {
             throw new InvalidConfigException(sprintf('AfterBugErrorHandler.componentID "%s" is invalid.', $this->clientId));
         }
 
