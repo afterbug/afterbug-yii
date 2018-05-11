@@ -31,6 +31,7 @@ class YiiRequest implements RequestInterface
     {
         $cookies = [];
         foreach (Yii::$app->request->cookies as $key => $cookie) {
+            // TODO: Change this method.
             if (mb_detect_encoding($cookie->value, 'UTF-8', true)) {
                 $cookies[$cookie->name] = $cookie->value;
             }
