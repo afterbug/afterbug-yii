@@ -79,8 +79,8 @@ $config = [
         'afterbug' => [
             'class' => 'AfterBug\AfterBugYii\AfterBug',
             'apiKey' => 'YOUR_AFTERBUG_API_KEY',
-            'on beforeNotify' => function ($config) {
-                $config->setMetaData([
+            'on beforeNotify' => function ($event) {
+                $event->client->setMetaData([
                     'custom' => 'Your custom data',
                 ]);
             }
