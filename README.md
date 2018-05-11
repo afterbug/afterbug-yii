@@ -1,6 +1,6 @@
 # AfterBug for Yii Framework
 
-[![StyleCI](https://styleci.io/repos/130384190/shield?style=flat)](https://styleci.io/repos/66539893)
+[![StyleCI](https://styleci.io/repos/130384190/shield?style=flat)](https://styleci.io/repos/130384190)
 [![Total Downloads](https://poser.pugx.org/afterbug/afterbug-yii/downloads)](https://packagist.org/packages/afterbug/afterbug-yii)
 [![Latest Stable Version](https://poser.pugx.org/afterbug/afterbug-yii/v/stable)](https://packagist.org/packages/afterbug/afterbug-yii)
 [![Latest Unstable Version](https://poser.pugx.org/afterbug/afterbug-yii/v/unstable)](https://packagist.org/packages/afterbug/afterbug-yii)
