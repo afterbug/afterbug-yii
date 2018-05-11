@@ -37,6 +37,11 @@ class AfterBug extends Component
     public $userAttributes = ['id', 'email', 'username', 'name'];
 
     /**
+     * @var array exception class to exclude.
+     */
+    public $excludeExceptions = [];
+
+    /**
      * @var Client
      */
     protected $client;
@@ -74,6 +79,7 @@ class AfterBug extends Component
                 'version' => static::VERSION,
             ])
             ->setApplicationPaths($this->applicationPaths())
+            ->setExcludeExceptions($this->excludeExceptions)
             ->setEnvironment(YII_ENV)
             ->registerDefaultCallbacks()
             ->registerCallback(new User());
@@ -88,8 +94,10 @@ class AfterBug extends Component
     {
         $event = (new ClientEvent())->setClient($this->client);
 
-        $this->trigger('beforeCapture', $event);
+        $this->trigger('beforeNotify', $event);
 
         $this->client->catchException($exception);
+
+        $this->trigger('afterNotify', $event);
     }
 }

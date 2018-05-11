@@ -40,7 +40,7 @@ Once the extension is installed, simply modify your application configuration as
 $config = [
     // ...
     'components' => [
-        'afterBug' => [
+        'afterbug' => [
             'class' => 'AfterBug\AfterBugYii\AfterBug',
             'apiKey' => 'YOUR_AFTERBUG_API_KEY',
         ],
@@ -48,6 +48,21 @@ $config = [
         'errorHandler' => [
             'class' => 'AfterBug\AfterBugYii\Exceptions\ErrorHandler',
             'errorAction' => 'site/error',
+        ],
+    ]
+];
+```
+
+### Exclude exceptions
+
+```php
+$config = [
+    // ...
+    'components' => [
+        'afterbug' => [
+            'class' => 'AfterBug\AfterBugYii\AfterBug',
+            'apiKey' => 'YOUR_AFTERBUG_API_KEY',
+            'excludeExceptions' => ['yii\web\NotFoundHttpException']
         ],
     ]
 ];
@@ -61,10 +76,10 @@ Set a callback to customize the data.
 $config = [
     // ...
     'components' => [
-        'afterBug' => [
+        'afterbug' => [
             'class' => 'AfterBug\AfterBugYii\AfterBug',
             'apiKey' => 'YOUR_AFTERBUG_API_KEY',
-            'on beforeCapture' => function ($config) {
+            'on beforeNotify' => function ($config) {
                 $config->setMetaData([
                     'custom' => 'Your custom data',
                 ]);

@@ -3,7 +3,6 @@
 namespace AfterBug\AfterBugYii\Exceptions;
 
 use Yii;
-use AfterBug\Client;
 use AfterBug\AfterBugYii\AfterBug;
 use yii\base\InvalidConfigException;
 
@@ -12,7 +11,7 @@ class ErrorHandler extends \yii\web\ErrorHandler
     /**
      * @var string component ID for the AfterBug client.
      */
-    public $clientId = 'afterBug';
+    public $clientId = 'afterbug';
 
     /**
      * Logs the given exception.
