@@ -53,17 +53,14 @@ class AfterBug extends Component
      */
     private function applicationPaths()
     {
-        $excludeDirectories = [Yii::getAlias('@vendor')];
+        $basePaths = array_filter(glob(Yii::getAlias('@app').'/*'), 'is_dir');
 
-        $dirs = array_filter(glob(Yii::getAlias('@app').'/*'), 'is_dir');
+        $excludePaths = [
+            Yii::getAlias('@vendor'),
+            Yii::getAlias('@runtime')
+        ];
 
-        foreach ($excludeDirectories as $directory) {
-            if (($key = array_search($directory, $dirs)) !== false) {
-                unset($dirs[$key]);
-            }
-        }
-
-        return $dirs;
+        return array_diff($basePaths, $excludePaths);
     }
 
     /**
