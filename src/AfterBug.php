@@ -17,7 +17,7 @@ class AfterBug extends Component
      *
      * @var string
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     /**
      * Set to `false` in development environment to skip collecting errors.
