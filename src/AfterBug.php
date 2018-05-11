@@ -57,7 +57,7 @@ class AfterBug extends Component
 
         $excludePaths = [
             Yii::getAlias('@vendor'),
-            Yii::getAlias('@runtime')
+            Yii::getAlias('@runtime'),
         ];
 
         return array_diff($basePaths, $excludePaths);
