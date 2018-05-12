@@ -16,7 +16,7 @@ class User
     public function __invoke(Config $config)
     {
         if (! Yii::$app->user->isGuest) {
-            $user = (array) Yii::$app->user->getIdentity();
+            $user = (array) Yii::$app->user->identity->getAttributes();
 
             $config->setUser(
                 array_intersect_key($user, array_flip((array) Yii::$app->afterbug->userAttributes))
